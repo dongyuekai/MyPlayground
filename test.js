@@ -121,6 +121,10 @@ let map = new Map([['F', 'no'], ['T', 'yes']])
 // console.log(map.values());
 // console.log(map.entries());
 
+let ds = { a: 5, c: 8 };
+let { c: f } = ds;
+console.log(f);
+
 
 
 
