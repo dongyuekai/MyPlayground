@@ -123,10 +123,115 @@ let map = new Map([['F', 'no'], ['T', 'yes']])
 
 let ds = { a: 5, c: 8 };
 let { c: f } = ds;
-console.log(f);
+// console.log(f);
+
+
+let num = 10;
+// console.log('dyk----', num.toString());
+// console.log('dyk----', num.toString(2));
+// console.log('dyk----', num.toString(8));
+// console.log('dyk----', num.toString(10));
+// console.log('dyk----', num.toString(16));
+
+// function add(n1, n2) {
+//   // arguments[1] = 10;
+//   // console.log(n1);
+//   // console.log(n2);
+//   console.log(arguments.callee);
+// }
+// add(1,2);
+
+// console.log(Math.floor(2.95));
 
 
 
+// let person = {
+//   name: 'dongyuekai',
+//   year: 11
+// };
+// Object.defineProperty(person, '_name', {
+//   get: function () {
+//     return this.name;
+//   },
+//   set: function (newValue) {
+//     this.name = newValue;
+//     this.year = 12;
+//   }
+// })
+// person._name = '123';
+// console.log(person);
+
+// ajax
+// let xhr = new XMLHttpRequest();
+// xhr.open('get', 'exam.php', false);
+// xhr.send(null);
+
+// // 检验响应的状态--->针对同步
+// if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+//   let data = xhr.responseText;
+// } else {
+//   console.log(xhr.status);
+// }
+// // 异步方案
+// xhr.onreadystatechange = function () {
+//   // xhr.readyStatus表示请求/响应过程的当前活动阶段
+//   // 0 未初始化，还没调用open()
+//   // 1 启动，已调用open()方法但未调用send()
+//   // 2 发送， 已调用send()方法，但未收到响应
+//   // 3 接收，已接收到部分响应数据
+//   // 4 完成，已接受到全部响应数据
+//   if (xhr.readyStatus == 4) {
+//     if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+//       var data = xhr.responseText;
+//     } else {
+//       console.log(xhr.status);
+//     }
+//   }
+// }
+// xhr.open('get', 'exam.php', false);
+// xhr.send(null);
+
+// xhr.abort();
+
+// function isArray(value) {
+//   return Object.prototype.toString().call(value) == '[object Array]';
+// }
+// function isFunction(value) {
+//   return Object.prototype.toString().call(value) == '[object Function]';
+// }
+
+// 函数柯里化
+// 函数柯里化
+// function curry(fn) {
+//   var args = Array.prototype.slice.call(arguments, 1);
+//   return function () {
+//     var innerArgs = Array.prototype.slice.call(arguments);
+//     var finalArgs = args.concat(innerArgs);
+//     return fn.apply(null, finalArgs)
+//   }
+// }
+// 使用
+// function add(n1, n2) {
+//   return n1 + n2
+// }
+// var curriedAdd = curry(add, 5);
+// console.log(curriedAdd, 5);
 
 
-
+function maxSort(arr) {
+  let result = [...arr];
+  for (let i = 0, len = result.length; i < len; i++) {
+    // 每次取最小值
+    let minV = Math.min(...result.slice(i))
+    // 从i开始索引 result中minV的位置
+    let pos = result.indexOf(minV,i);
+    // 找到minV的位置 删除
+    result.splice(pos,1);
+    // 把minV放到头部
+    result.unshift(minV);
+  }
+  result.reverse();
+  console.log(result);
+  return result;
+}
+maxSort([11, 22, 33, 4, 5, 6, 7, 8, 9])

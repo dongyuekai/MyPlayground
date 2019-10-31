@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <label for="favorite_team">Favorite Team:</label>
+  <!-- 注意input的list属性与datalist的id属性进行绑定 -->
+  <input type="text" name="team" id="favorite_team" list="team_list" autocomplete="off">
+  <datalist id="team_list">
+    <!-- 指定了value值之后，value和innerHTML类似于标题与副标题之间的关系，选中后input的值是value -->
+    <option value="A">Aus Tigers</option>
+    <option value="B">Detroit Lions</option>
+    <option value="C">Detroit Pistons</option>
+    <option value="D">Detroit Red Wings</option>
+    <option value="E">Detroit Tigers</option>
+  </datalist>
+</body>
+
+</html>
