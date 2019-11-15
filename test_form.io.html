@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/formiojs@latest/dist/formio.full.min.css">
+  <script src="https://unpkg.com/formiojs@latest/dist/formio.full.min.js"></script>
+  <script type='text/javascript'>
+    window.onload = function () {
+      Formio.icons = 'fontawesome';
+      Formio.createForm(document.getElementById('formio'), 'https://examples.form.io/example').then(form => {
+        form.submission = {
+          data: {
+            firstName: 'dong',
+            lastName: 'yuekai',
+            email: 'dyk@163.com',
+          }
+        };
+        form.on('submit', submission => {
+          // console.log('Submission was made!', submission); 
+          alert(1);
+        })
+        form.on('change', changed => {
+          // console.log('Form was changed', changed);
+          alert(2);
+        })
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div id='formio'></div>
+</body>
+
+</html>
