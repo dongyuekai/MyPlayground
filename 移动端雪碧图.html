@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    /* 测试图片的长宽为192*48 */
+
+    html {
+      font-size: 100px;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .content {
+      width: 100px;
+      max-width: 640px;
+      min-width: 320px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .content div {
+      width: .48rem;
+      height: .48rem;
+      float: left;
+      margin-right: 1rem;
+      background: url(./img/small.png) no-repeat;
+      background-size: 1.92rem auto;
+    }
+
+    .content div:nth-of-type(1) {
+      background-position: 0 0;
+    }
+
+    .content div:nth-of-type(2) {
+      /* background-position: -.48rem 0; */
+      background-position: 33.33% 0;
+    }
+
+    .content div:nth-of-type(3) {
+      /* background-position: -.96rem 0; */
+      background-position: 66.67% 0;
+    }
+
+    .content div:nth-of-type(4) {
+      /* background-position: -1.44rem 0; */
+      background-position: 100% 0;
+    }
+  </style>
+</head>
+
+<!--处理过移动端的雪碧图的都知道，因为容器的宽度高度是自适应的或者是响应式的。如果不设置background-size:图片会出现溢出的情况-->
+
+<body>
+  <div class="content">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <p style="font-size: .125rem;">你好</p>
+  <script>
+
+    selfAuto(100, 640)();
+    window.onresize = selfAuto(100, 640);
+
+    // 100是html的原始字体的大小
+    // 640是原始设计效果图大小
+    function selfAuto(fontSize, oriWidth) {
+      let oHtml = document.querySelector('html');
+      return function () {
+        let fixedFontSize = fontSize;
+        let htmlWidth = oHtml.offsetHeight;
+        if (htmlWidth > oriWidth) {
+          htmlWidth = oriWidth;
+        }
+        if (htmlWidth < 320) {
+          htmlWidth = 320;
+        }
+        fixedFontSize = fixedFontSize * (htmlWidth / oriWidth);
+        oHtml.style.fontSize = fixedFontSize + 'px';
+      }
+    }
+  </script>
+</body>
+
+</html>

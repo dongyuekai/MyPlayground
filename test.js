@@ -218,20 +218,133 @@ let num = 10;
 // console.log(curriedAdd, 5);
 
 
-function maxSort(arr) {
-  let result = [...arr];
-  for (let i = 0, len = result.length; i < len; i++) {
-    // 每次取最小值
-    let minV = Math.min(...result.slice(i))
-    // 从i开始索引 result中minV的位置
-    let pos = result.indexOf(minV,i);
-    // 找到minV的位置 删除
-    result.splice(pos,1);
-    // 把minV放到头部
-    result.unshift(minV);
-  }
-  result.reverse();
-  console.log(result);
-  return result;
-}
-maxSort([11, 22, 33, 4, 5, 6, 7, 8, 9])
+// function maxSort(arr) {
+//   let result = [...arr];
+//   for (let i = 0, len = result.length; i < len; i++) {
+//     // 每次取最小值
+//     let minV = Math.min(...result.slice(i))
+//     // 从i开始索引 result中minV的位置
+//     let pos = result.indexOf(minV,i);
+//     // 找到minV的位置 删除
+//     result.splice(pos,1);
+//     // 把minV放到头部
+//     result.unshift(minV);
+//   }
+//   result.reverse();
+//   console.log(result);
+//   return result;
+// }
+// maxSort([11, 22, 33, 4, 5, 6, 7, 8, 9])
+
+// console.log(typeof ({}));
+// console.log([] instanceof Array); // 参数：object（要检测的对象.）constructor（某个构造函数） instanceof 运算符用来检测 constructor.prototype 是否存在于参数 object 的原型链上
+
+// function foo() {
+//   let a = b = 0;
+//   a++;
+//   return a;
+// }
+
+// console.log(foo());
+// console.log(typeof a);
+// console.log(typeof b);
+
+// const clothes = ['jacket', 't-shirt'];
+// clothes.length = 0; // 当js执行clothes.length=0时 数组clothes中的所有项都被删除了
+
+// console.log(clothes[0]); // 因为clothes中的所有元素都被删除了 所有clothes[0]=undefined
+
+// console.log(0.1+0.2===0.3); // false
+
+// console.log(myVar);   //  undefined
+// console.log(myConst); //  直接报错 ReferenceError
+// var myVar = 'value';
+// const myConst = 3.14;
+
+
+// function test(person) {
+//   person.age = 26;
+//   person = {
+//     name: 'hzj',
+//     age: 18,
+//   };
+//   return person;
+// }
+// const p1 = {
+//   name: 'fyq',
+//   age: 19,
+// }
+// const p2 = test(p1);
+
+// console.log(p1); //p1：{name: “fyq”, age: 26}
+// console.log(p2); //p2：{name: “hzj”, age: 18}
+
+// var obj = {
+//   value: 3,
+//   valueOf() {
+//     return 4;
+//   },
+//   toString() {
+//     return '5'
+//   },
+//   [Symbol.toPrimitive]() {
+//     return 6
+//   }
+// }
+// console.log(obj+1); // 输出7
+
+
+// var a = {
+//   value: 0,
+//   valueOf: function () {
+//     console.log('this.value====', this.value); // 0  1
+//     this.value++;
+//     console.log('this.value=====', this.value); // 1  2
+//     return this.value;
+//   }
+// }
+// console.log(a == 1 && a == 2);
+
+
+// var a = new Function();
+// console.log(a.__proto__ === Function.prototype); 
+// console.log(a.__proto__);
+
+// var A = function () { };
+// A.prototype.n = 1;
+// var b = new A();
+// A.prototype = {
+//   n: 2,
+//   m: 3
+// }
+// var c = new A();
+
+// console.log(b.n);
+// console.log(b.m);
+
+// console.log(c.n);
+// console.log(c.m);
+
+
+// var F = function () { };
+// Object.prototype.a = function () {
+//   console.log('a');
+// };
+// Function.prototype.b = function () {
+//   console.log('b');
+// }
+// var f = new F();
+// f.a();
+// f.b();
+
+// F.a();
+// F.b();
+
+// function Parent1() {
+//   this.name = 'parent1';
+// }
+// function Child1() {
+//   Parent1.call(this);
+//   this.type = 'child1'
+// }
+// console.log(new Child1);
