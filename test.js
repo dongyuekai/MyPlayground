@@ -348,3 +348,65 @@ let num = 10;
 //   this.type = 'child1'
 // }
 // console.log(new Child1);
+
+
+// function compareVersion(version1, version2) {
+//   if (version1 == null || version2 == null) {
+//     console.log('error');
+//   }
+//   let versionArray1 = version1.split('.');
+//   let versionArray2 = version2.split('.');
+//   let idx = 0;
+//   let minLength = Math.min(versionArray1.length, versionArray2.length); // 取最小长度值
+//   let diff = 0;
+//   while (
+//     idx < minLength &&
+//     (diff = versionArray1[idx].length - versionArray2[idx].length) == 0 && // 先比较长度
+//     (diff = versionArray1[idx] > versionArray2[idx]) == 0
+//   ) {
+//     // 再比较字符
+//     ++idx;
+//   }
+//   // console.log('222-------', idx)
+//   // console.log('diff=====', diff);
+//   // 如果已经分出大小，则直接返回，如果未分出大小，则再比较位数，有子版本的为大；
+//   // console.log('versionArray1.length - versionArray2.length=====', versionArray1.length - versionArray2.length)
+//   diff = diff != 0 ? diff : versionArray1.length - versionArray2.length;
+//   return !!diff;
+// };
+
+function compareVersion(curV, reqV) {
+  if (curV && reqV) {
+    //将两个版本号拆成数字
+    var arr1 = curV.split('.'),
+      arr2 = reqV.split('.');
+    var minLength = Math.min(arr1.length, arr2.length),
+      position = 0,
+      diff = 0;
+    //依次比较版本号每一位大小，当对比得出结果后跳出循环（后文有简单介绍）
+    while (position < minLength && ((diff = parseInt(arr1[position]) - parseInt(arr2[position])) == 0)) {
+      position++;
+    }
+    diff = (diff != 0) ? diff : (arr1.length - arr2.length);
+    //若curV大于reqV，则返回true
+    return diff > 0;
+  } else {
+    //输入为空
+    return false;
+  }
+}
+
+
+console.log(compareVersion('3.5.2', '3.5.2'));
+console.log(compareVersion('3.5.2', '3.9.1'));
+console.log(compareVersion('3.5.2', '3.5.9'));
+console.log(compareVersion('3.5.2', '3.5.1'));
+console.log(compareVersion('3.5.2', '3.6.0'));
+console.log(compareVersion('3.5.2', '3.6.1'));
+console.log(compareVersion('3.5.2', '3.6.4'));
+console.log(compareVersion('3.5.2', '2.9.6'));
+console.log(compareVersion('3.15.2', '3.9.6'));
+console.log(compareVersion('2.15.2', '3.9.6'));
+console.log(compareVersion('3.15.2', '3.9'));
+console.log(compareVersion('4.1.2', '3.9'));
+console.log(compareVersion('4.1', '3.9.3'));
