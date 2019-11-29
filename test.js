@@ -375,38 +375,52 @@ let num = 10;
 //   return !!diff;
 // };
 
-function compareVersion(curV, reqV) {
-  if (curV && reqV) {
-    //将两个版本号拆成数字
-    var arr1 = curV.split('.'),
-      arr2 = reqV.split('.');
-    var minLength = Math.min(arr1.length, arr2.length),
-      position = 0,
-      diff = 0;
-    //依次比较版本号每一位大小，当对比得出结果后跳出循环（后文有简单介绍）
-    while (position < minLength && ((diff = parseInt(arr1[position]) - parseInt(arr2[position])) == 0)) {
-      position++;
-    }
-    diff = (diff != 0) ? diff : (arr1.length - arr2.length);
-    //若curV大于reqV，则返回true
-    return diff > 0;
-  } else {
-    //输入为空
-    return false;
+// function compareVersion(curV, reqV) {
+//   if (curV && reqV) {
+//     //将两个版本号拆成数字
+//     var arr1 = curV.split('.'),
+//       arr2 = reqV.split('.');
+//     var minLength = Math.min(arr1.length, arr2.length),
+//       position = 0,
+//       diff = 0;
+//     //依次比较版本号每一位大小，当对比得出结果后跳出循环（后文有简单介绍）
+//     while (position < minLength && ((diff = parseInt(arr1[position]) - parseInt(arr2[position])) == 0)) {
+//       position++;
+//     }
+//     diff = (diff != 0) ? diff : (arr1.length - arr2.length);
+//     //若curV大于reqV，则返回true
+//     return diff > 0;
+//   } else {
+//     //输入为空
+//     return false;
+//   }
+// }
+
+
+// console.log(compareVersion('3.5.2', '3.5.2'));
+// console.log(compareVersion('3.5.2', '3.9.1'));
+// console.log(compareVersion('3.5.2', '3.5.9'));
+// console.log(compareVersion('3.5.2', '3.5.1'));
+// console.log(compareVersion('3.5.2', '3.6.0'));
+// console.log(compareVersion('3.5.2', '3.6.1'));
+// console.log(compareVersion('3.5.2', '3.6.4'));
+// console.log(compareVersion('3.5.2', '2.9.6'));
+// console.log(compareVersion('3.15.2', '3.9.6'));
+// console.log(compareVersion('2.15.2', '3.9.6'));
+// console.log(compareVersion('3.15.2', '3.9'));
+// console.log(compareVersion('4.1.2', '3.9'));
+// console.log(compareVersion('4.1', '3.9.3'));
+
+let cityCodeArr = [
+  ['110000', '110100'],
+  ['120000', '120100'],
+  ['130000', '130100'],
+  ['130000', '130500'],
+];
+let newCityCodeArr = cityCodeArr.map(item => {
+  return {
+    'province': item[0],
+    'city': item[1],
   }
-}
-
-
-console.log(compareVersion('3.5.2', '3.5.2'));
-console.log(compareVersion('3.5.2', '3.9.1'));
-console.log(compareVersion('3.5.2', '3.5.9'));
-console.log(compareVersion('3.5.2', '3.5.1'));
-console.log(compareVersion('3.5.2', '3.6.0'));
-console.log(compareVersion('3.5.2', '3.6.1'));
-console.log(compareVersion('3.5.2', '3.6.4'));
-console.log(compareVersion('3.5.2', '2.9.6'));
-console.log(compareVersion('3.15.2', '3.9.6'));
-console.log(compareVersion('2.15.2', '3.9.6'));
-console.log(compareVersion('3.15.2', '3.9'));
-console.log(compareVersion('4.1.2', '3.9'));
-console.log(compareVersion('4.1', '3.9.3'));
+})
+console.log(newCityCodeArr)
