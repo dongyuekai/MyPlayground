@@ -411,16 +411,32 @@ let num = 10;
 // console.log(compareVersion('4.1.2', '3.9'));
 // console.log(compareVersion('4.1', '3.9.3'));
 
-let cityCodeArr = [
-  ['110000', '110100'],
-  ['120000', '120100'],
-  ['130000', '130100'],
-  ['130000', '130500'],
-];
-let newCityCodeArr = cityCodeArr.map(item => {
-  return {
-    'province': item[0],
-    'city': item[1],
-  }
-})
-console.log(newCityCodeArr)
+// let cityCodeArr = [
+//   ['110000', '110100'],
+//   ['120000', '120100'],
+//   ['130000', '130100'],
+//   ['130000', '130500'],
+// ];
+// let newCityCodeArr = cityCodeArr.map(item => {
+//   return {
+//     'province': item[0],
+//     'city': item[1],
+//   }
+// })
+// console.log(newCityCodeArr)
+
+// 统计数组中各个元素出现的次数
+// staArrNum = arr => {
+//   let obj = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     let m = arr[i];
+//     if (obj.hasOwnProperty(m)) {
+//       obj[m] += 1;
+//     } else {
+//       obj[m] = 1;
+//     }
+//   }
+//   return obj;
+// }
+// let arr = [1, 2, 3, 6, 5, 3, 2, 1, 2, 3, 2, 1];
+// console.log(staArrNum(arr));
