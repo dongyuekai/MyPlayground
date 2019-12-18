@@ -1,7 +1,7 @@
 // let rowData = [
-//   { name: 'dyk', content: '' },
-//   { name: 'lisi', content: '123' },
-//   { name: 'shiguangjie', content: '222' }
+//   { name: "dyk", content: "" },
+//   { name: "lisi", content: "123" },
+//   { name: "shiguangjie", content: "222" }
 // ]
 // rowData = rowData.filter(item => item.content.length > 0)
 
@@ -10,7 +10,7 @@
 // const arr = [10, 12, 15, 21];
 // for (var i = 0; i < arr.length; i++) {
 //   setTimeout(function () {
-//     console.log('The index of this number is: ' + i);
+//     console.log("The index of this number is: " + i);
 //   }, 3000);
 // }
 
@@ -35,7 +35,7 @@
 // console.log(max);
 
 // function isArray(obj){
-//   return Object.prototype.toString.call(obj) === '[object Array]';
+//   return Object.prototype.toString.call(obj) === "[object Array]";
 // }
 // console.log(isArray([1,2,4]));
 
@@ -87,14 +87,14 @@
 
 // Set
 let s = new Set()
-s.add('hello').add('good').add('world')
+s.add("hello").add("good").add("world")
 // console.log(s.size)
-// console.log(s.has('good'))
+// console.log(s.has("good"))
 // console.log(s);
 
 // Maps
 let m = new Map()
-m.set('hello', 43)
+m.set("hello", 43)
 m.set(s, 4)
 // console.log(m.get(s))
 
@@ -113,7 +113,7 @@ ws.add({ data: 42 })
 // 第一个：WeakSet的成员只能是对象，而不能是其他的值。
 // 第二个：WeakSet中的对象都是弱引用，即垃圾回收机制不考虑WeakSet对该对象的引用，也就是说，如果其他对象都不再引用该对象。那么垃圾回收机制会自动会输该对象所占用的额内存，不考虑该对象还存在与WeakSet之中。
 
-let map = new Map([['F', 'no'], ['T', 'yes']])
+let map = new Map([["F", "no"], ["T", "yes"]])
 // for (let key of map.keys()) {
 //   console.log(key);   // F T
 // }
@@ -127,11 +127,11 @@ let { c: f } = ds;
 
 
 let num = 10;
-// console.log('dyk----', num.toString());
-// console.log('dyk----', num.toString(2));
-// console.log('dyk----', num.toString(8));
-// console.log('dyk----', num.toString(10));
-// console.log('dyk----', num.toString(16));
+// console.log("dyk----", num.toString());
+// console.log("dyk----", num.toString(2));
+// console.log("dyk----", num.toString(8));
+// console.log("dyk----", num.toString(10));
+// console.log("dyk----", num.toString(16));
 
 // function add(n1, n2) {
 //   // arguments[1] = 10;
@@ -146,10 +146,10 @@ let num = 10;
 
 
 // let person = {
-//   name: 'dongyuekai',
+//   name: "dongyuekai",
 //   year: 11
 // };
-// Object.defineProperty(person, '_name', {
+// Object.defineProperty(person, "_name", {
 //   get: function () {
 //     return this.name;
 //   },
@@ -158,12 +158,12 @@ let num = 10;
 //     this.year = 12;
 //   }
 // })
-// person._name = '123';
+// person._name = "123";
 // console.log(person);
 
 // ajax
 // let xhr = new XMLHttpRequest();
-// xhr.open('get', 'exam.php', false);
+// xhr.open("get", "exam.php", false);
 // xhr.send(null);
 
 // // 检验响应的状态--->针对同步
@@ -188,16 +188,16 @@ let num = 10;
 //     }
 //   }
 // }
-// xhr.open('get', 'exam.php', false);
+// xhr.open("get", "exam.php", false);
 // xhr.send(null);
 
 // xhr.abort();
 
 // function isArray(value) {
-//   return Object.prototype.toString().call(value) == '[object Array]';
+//   return Object.prototype.toString().call(value) == "[object Array]";
 // }
 // function isFunction(value) {
-//   return Object.prototype.toString().call(value) == '[object Function]';
+//   return Object.prototype.toString().call(value) == "[object Function]";
 // }
 
 // 函数柯里化
@@ -249,7 +249,7 @@ let num = 10;
 // console.log(typeof a);
 // console.log(typeof b);
 
-// const clothes = ['jacket', 't-shirt'];
+// const clothes = ["jacket", "t-shirt"];
 // clothes.length = 0; // 当js执行clothes.length=0时 数组clothes中的所有项都被删除了
 
 // console.log(clothes[0]); // 因为clothes中的所有元素都被删除了 所有clothes[0]=undefined
@@ -258,20 +258,20 @@ let num = 10;
 
 // console.log(myVar);   //  undefined
 // console.log(myConst); //  直接报错 ReferenceError
-// var myVar = 'value';
+// var myVar = "value";
 // const myConst = 3.14;
 
 
 // function test(person) {
 //   person.age = 26;
 //   person = {
-//     name: 'hzj',
+//     name: "hzj",
 //     age: 18,
 //   };
 //   return person;
 // }
 // const p1 = {
-//   name: 'fyq',
+//   name: "fyq",
 //   age: 19,
 // }
 // const p2 = test(p1);
@@ -285,7 +285,7 @@ let num = 10;
 //     return 4;
 //   },
 //   toString() {
-//     return '5'
+//     return "5"
 //   },
 //   [Symbol.toPrimitive]() {
 //     return 6
@@ -297,9 +297,9 @@ let num = 10;
 // var a = {
 //   value: 0,
 //   valueOf: function () {
-//     console.log('this.value====', this.value); // 0  1
+//     console.log("this.value====", this.value); // 0  1
 //     this.value++;
-//     console.log('this.value=====', this.value); // 1  2
+//     console.log("this.value=====", this.value); // 1  2
 //     return this.value;
 //   }
 // }
@@ -328,10 +328,10 @@ let num = 10;
 
 // var F = function () { };
 // Object.prototype.a = function () {
-//   console.log('a');
+//   console.log("a");
 // };
 // Function.prototype.b = function () {
-//   console.log('b');
+//   console.log("b");
 // }
 // var f = new F();
 // f.a();
@@ -341,21 +341,21 @@ let num = 10;
 // F.b();
 
 // function Parent1() {
-//   this.name = 'parent1';
+//   this.name = "parent1";
 // }
 // function Child1() {
 //   Parent1.call(this);
-//   this.type = 'child1'
+//   this.type = "child1"
 // }
 // console.log(new Child1);
 
 
 // function compareVersion(version1, version2) {
 //   if (version1 == null || version2 == null) {
-//     console.log('error');
+//     console.log("error");
 //   }
-//   let versionArray1 = version1.split('.');
-//   let versionArray2 = version2.split('.');
+//   let versionArray1 = version1.split(".");
+//   let versionArray2 = version2.split(".");
 //   let idx = 0;
 //   let minLength = Math.min(versionArray1.length, versionArray2.length); // 取最小长度值
 //   let diff = 0;
@@ -367,10 +367,10 @@ let num = 10;
 //     // 再比较字符
 //     ++idx;
 //   }
-//   // console.log('222-------', idx)
-//   // console.log('diff=====', diff);
+//   // console.log("222-------", idx)
+//   // console.log("diff=====", diff);
 //   // 如果已经分出大小，则直接返回，如果未分出大小，则再比较位数，有子版本的为大；
-//   // console.log('versionArray1.length - versionArray2.length=====', versionArray1.length - versionArray2.length)
+//   // console.log("versionArray1.length - versionArray2.length=====", versionArray1.length - versionArray2.length)
 //   diff = diff != 0 ? diff : versionArray1.length - versionArray2.length;
 //   return !!diff;
 // };
@@ -378,8 +378,8 @@ let num = 10;
 // function compareVersion(curV, reqV) {
 //   if (curV && reqV) {
 //     //将两个版本号拆成数字
-//     var arr1 = curV.split('.'),
-//       arr2 = reqV.split('.');
+//     var arr1 = curV.split("."),
+//       arr2 = reqV.split(".");
 //     var minLength = Math.min(arr1.length, arr2.length),
 //       position = 0,
 //       diff = 0;
@@ -397,30 +397,30 @@ let num = 10;
 // }
 
 
-// console.log(compareVersion('3.5.2', '3.5.2'));
-// console.log(compareVersion('3.5.2', '3.9.1'));
-// console.log(compareVersion('3.5.2', '3.5.9'));
-// console.log(compareVersion('3.5.2', '3.5.1'));
-// console.log(compareVersion('3.5.2', '3.6.0'));
-// console.log(compareVersion('3.5.2', '3.6.1'));
-// console.log(compareVersion('3.5.2', '3.6.4'));
-// console.log(compareVersion('3.5.2', '2.9.6'));
-// console.log(compareVersion('3.15.2', '3.9.6'));
-// console.log(compareVersion('2.15.2', '3.9.6'));
-// console.log(compareVersion('3.15.2', '3.9'));
-// console.log(compareVersion('4.1.2', '3.9'));
-// console.log(compareVersion('4.1', '3.9.3'));
+// console.log(compareVersion("3.5.2", "3.5.2"));
+// console.log(compareVersion("3.5.2", "3.9.1"));
+// console.log(compareVersion("3.5.2", "3.5.9"));
+// console.log(compareVersion("3.5.2", "3.5.1"));
+// console.log(compareVersion("3.5.2", "3.6.0"));
+// console.log(compareVersion("3.5.2", "3.6.1"));
+// console.log(compareVersion("3.5.2", "3.6.4"));
+// console.log(compareVersion("3.5.2", "2.9.6"));
+// console.log(compareVersion("3.15.2", "3.9.6"));
+// console.log(compareVersion("2.15.2", "3.9.6"));
+// console.log(compareVersion("3.15.2", "3.9"));
+// console.log(compareVersion("4.1.2", "3.9"));
+// console.log(compareVersion("4.1", "3.9.3"));
 
 // let cityCodeArr = [
-//   ['110000', '110100'],
-//   ['120000', '120100'],
-//   ['130000', '130100'],
-//   ['130000', '130500'],
+//   ["110000", "110100"],
+//   ["120000", "120100"],
+//   ["130000", "130100"],
+//   ["130000", "130500"],
 // ];
 // let newCityCodeArr = cityCodeArr.map(item => {
 //   return {
-//     'province': item[0],
-//     'city': item[1],
+//     "province": item[0],
+//     "city": item[1],
 //   }
 // })
 // console.log(newCityCodeArr)
@@ -440,3 +440,241 @@ let num = 10;
 // }
 // let arr = [1, 2, 3, 6, 5, 3, 2, 1, 2, 3, 2, 1];
 // console.log(staArrNum(arr));
+// ([1,2,3]).flat()
+
+// console.log("123456    ".trimEnd())
+
+let obj = {
+  foo: 0,
+  bar: 1
+};
+Object.observe(obj, function (changes) {
+  console.log(changes);
+});
+obj.bar = 2;
+
+
+
+let arr = [
+  {
+    key: "1月",
+    value: [
+      {
+        key: "01",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      },
+      {
+        key: "02",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      },
+      {
+        key: "03",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      }
+    ]
+  },
+  {
+    key: "2月",
+    value: [
+      {
+        key: "01",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      },
+      {
+        key: "02",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      },
+      {
+        key: "03",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      }
+    ]
+  },
+  {
+    key: "3月",
+    value: [
+      {
+        key: "01",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      },
+      {
+        key: "02",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      },
+      {
+        key: "03",
+        value: [
+          {
+            title: "圣诞节",
+            date: "全天",
+            source: "日历"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "11:00 - 11:30",
+            source: "日历1"
+          },
+          {
+            title: "移动平台每日早会",
+            date: "12:00 - 13:30",
+            source: "日历2"
+          },
+        ]
+      }
+    ]
+  },
+]
+
+
+
+
+
+
+let dayDic = {
+  "key": "01",
+  "value": [
+    {
+      "title": "圣诞节",
+      "date": "全天",
+      "source": "日历"
+    },
+    {
+      "title": "移动平台每日早会",
+      "date": "11:00 - 11:30",
+      "source": "日历1"
+    },
+    {
+      "title": "移动平台每日早会",
+      "date": "12:00 - 13:30",
+      "source": "日历2"
+    },
+  ]
+},
